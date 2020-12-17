@@ -1,0 +1,25 @@
+.spacer {
+  flex: 1 1 auto;
+}
+.material-icons {
+  padding-left: 5px;
+}
+
+.title {
+  padding-left: 20px;
+}
+.home {
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+.navbar {
+  background-color: rgb(255, 255, 255);
+}
+.menu {
+    color: skyblue;
+    padding-right: 5px;
+  
+}
+.example-icon {
+  font-size: large;
+}
