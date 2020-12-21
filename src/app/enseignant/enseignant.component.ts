@@ -13,10 +13,11 @@ export class EnseignantComponent implements OnInit {
     password: null,
   };
   originalTeacherSignUp: userSignUp = {
-    name: null,
-    email: null,
+    id: null,
+    firstName: null,
+    lastName: null,
+    emailId: null,
     password: null,
-    repassword: null,
   };
 
   teacherSignUp: userSignUp = { ...this.originalTeacherSignUp };

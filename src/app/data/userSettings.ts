@@ -4,8 +4,9 @@ export interface UserSignIn {
 }
 
 export interface userSignUp {
-    name: string,
-    email: string,
+    id: number,
+    firstName: string,
+    lastName: string,
+    emailId: string,
     password: string,
-    repassword:string
 }

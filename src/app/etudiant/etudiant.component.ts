@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailValidator } from '@angular/forms';
 import { UserSignIn, userSignUp } from '../data/userSettings';
 import { EtudiantService } from '../etudiant.service';
 
@@ -14,36 +15,42 @@ export class EtudiantComponent implements OnInit {
     password: null
   };
   originalStudentSignUp: userSignUp = {
-    name: null,
-    email: null,
+    id: null,
+    firstName: null,
+    lastName: null,
+    emailId: null,
     password: null,
-    repassword:null
   }
 
   studentSignUp: userSignUp = {...this.originalStudentSignUp};
   studentSignIn: UserSignIn = {...this.originalStudentSignIn};
   constructor(private studentService: EtudiantService) { }
-
-  submitted = false;
+  student: UserSignIn = null;
   ngOnInit(): void {
-    this.submitted = false;
-  }
-
-  saveStudent(saveStudent) {
-    this.originalStudentSignUp.name = this.studentSignUp.name;
-    this.originalStudentSignUp.email = this.studentSignUp.email;
-    this.originalStudentSignUp.password = this.studentSignUp.password;
-    this.originalStudentSignUp.repassword = this.studentSignUp.repassword;
-    this.submitted = true; 
-    this.save();
-  }
-
-  save() {
-    this.studentService.createStudent(this.originalStudentSignUp).subscribe(
-      (data) => console.log(data),
-      (error) => console.log(error)
-    );  
 
   }
-
+  saveStudent() {
+    this.studentService.createStudent(this.studentSignUp).subscribe(data => {
+      console.log(data)
+    },
+      error => console.log(error)
+    )
+  }
+ 
+  onSubmit() {
+    console.log(this.studentSignUp);
+    this.saveStudent();
+  }
+  onSubmitLogin() {
+    /*console.log(this.studentSignIn);
+    this.getStudentByEmail(this.studentSignIn.email, this.studentSignIn.password);*/
+    
+  }
+  getStudentByEmail(email: string,password: string) {
+    return this.studentService.getStudent(this.studentSignIn).subscribe(data => {
+      console.log(data)
+    },
+      error => console.log(error)
+    )
+  }
 }

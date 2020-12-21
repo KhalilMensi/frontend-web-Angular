@@ -16,18 +16,43 @@
 .groupe {
   padding-left: 4.3cm;
 }
-.mat-grid-list {
-  width: 55%;
-  height: 50% auto;
-  border-radius: 8px;
-  padding: 1cm;
-}
-.mat-grid-tile {
-  background-color: steelblue;
-  border-radius: 8px;
-}
+
 .home {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
+.content {
+    padding: 16px;
+    text-align:center;
+    display: flex;
+}
+
+.content > mat-card {
+    width: 300px;
+    height: 400px;
+}
+.example-card {
+  max-width: 300px;
+  max-height: 350px;
+}
+.example-header{
+  background-image: url("/assets/webv.jpg");
+  background-size: cover;
+}
+mat-grid-tile {
+  background: lightblue;
+}
+.example-header-image {
+  background-image: url("/assets/profRes.jpg");
+  background-size: cover;
+}
+
+.float-child {
+    flex: 1;
+    margin: 20px;
+}  
+
+.float-child:first-child {
+    margin-right: 20px;
+} 
